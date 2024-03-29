@@ -76,19 +76,13 @@ console.log(invertString(string))
 // Escreva um código que receba um array de números por parâmetro e retorne
 // o array com os elementos duplicados removidos.
 function noDuplicates(array) {
-     const duplicado = array.slice()
-     duplicado.sort()
-     let indice = 0
-     for ( let index = 0 ; index < array.length ; index += 1 ){
-         indice += 1
-         if ( array[index] === duplicado[indice] ){
-             array.splice(index,1)
-         }
-     }
-     return array
- }
-
- console.log(noDuplicates(array))
+  const duplicados = []
+  array.map((x) => {
+    !duplicados.includes(x) ? duplicados.push(x) : false
+  })
+  return duplicados
+}
+console.log( noDuplicates(array) )
   
 
 
